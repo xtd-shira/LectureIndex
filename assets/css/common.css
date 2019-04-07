@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+body {
+  background-color: #eeeeee;
+  color: #444444;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h3 { margin-bottom: 0px; }
+
+p { font-size: 10pt; }
+
+a:link { color: #00aaaa; }
+a:visited { color: #336666; }
+
+footer { font-size: 10pt; }
+
+.credit {
+  list-style:none;
+  margin-top: 0px;
+}
+
+.bookinfo {
+  list-style:none;
+  font-size: 8pt;
+}
