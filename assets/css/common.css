@@ -40,8 +40,8 @@ table th, table td{
   text-align: center;
 }
 
-table .heading { background-color: #cccccc }
+.heading { background-color: #cccccc }
 
-table .article { background-color: #dddddd }
+.article { background-color: #dddddd }
 
 table ul { text-align: left;}
