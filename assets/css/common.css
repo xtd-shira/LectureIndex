@@ -36,7 +36,6 @@ table {
 
 table th, table td{
   border: solid 2px #444444;
-  text-align: center;
 }
 
 .heading { background-color: #cccccc }
