@@ -30,12 +30,15 @@ footer { font-size: 10pt; }
 }
 
 table {
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
+  border-collapse: seprate;
+  border-spacing:0px;
   text-align: center;
+  border: solid 1px #444444;
  }
 
 table th, table td{
-  border: solid 2px #444444;
+  border: solid .5px #444444;
 }
 
 .heading { background-color: #cccccc }
