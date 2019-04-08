@@ -29,7 +29,11 @@ footer { font-size: 10pt; }
   list-style:none;
 }
 
-table { border-collapse: collapse; }
+table {
+  border-collapse: collapse;
+  border: solid 2px #444444;
+  text-align: center;
+ }
 
 table th, table td{
   border: solid 2px #444444;
