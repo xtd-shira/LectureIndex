@@ -23,9 +23,10 @@ footer { font-size: 10pt; }
   margin-top: 0px;
 }
 
-.bookinfo {
+.caption {
   list-style:none;
   font-size: 8pt;
+  margin-bottom: 10px;
 }
 
 .nonedot {
