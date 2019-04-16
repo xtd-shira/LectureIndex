@@ -49,3 +49,7 @@ table th, table td{
 table ul { text-align: left;}
 
 .done { text-decoration: line-through;}
+
+.prettyprint ol.linenums > li {
+	list-style-type: decimal;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../assets/css/common.css">
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&amp;subset=japanese" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&skin=desert"></script>
+
+  <title>GSwArdn</title>
+</head>
+
+<body>
+  <header>
+    <h1>Arduinoをはじめよう</h1>
+  </header>
+  <hr>
+
+  <main>
+    <section>
+      <h2>Arduinoとは？</h2>
+      <p>
+        ワンボードマイコンの一種で，2005年にイタリアのInteraction Design Institute Ivreaで，
+        <br>「安価で簡便なデジタル制御装置を作り販売するプロジェクト」として始まった．
+        <br>I/Oポートを備え，インタラクティブな装置として用いることができる．
+        <br>ハードウェアの設計はクリエイティブ・コモンズライセンスで，
+        <br>統合開発環境のソースコードもGPL v2ライセンスで提供されている．
+      </p>
+      <ul>
+        <li>Arduinoボード</li>
+        <img src="../assets/img/arduino/ArduinoUnoR3.jpg" alt="">
+        <li>統合開発環境（IDE）</li>
+        <img src="../assets/img/arduino/arduino_ide.png" alt="">
+      </ul>
+
+      <h3>開発環境の構築 "ArduinoCreate"</h3>
+      <p>ここではweb開発環境"ArduinoCreate"を使う</p>
+      <ol>
+        <li><a href="https://create.arduino.cc/">Arduino Create</a>のWebページに行く</li>
+        <img src="../assets/img/arduino/a01.png" alt="">
+        <li>Arduino Web Editorをクリック</li>
+        <img src="../assets/img/arduino/a02.png" alt="">
+        <li>google Accountでサインインしましょう</li>
+        <img src="../assets/img/arduino/a03.png" alt="">
+        <li>ユーザーネーム埋めるのと一番上の項目をチェック</li>
+        <img src="../assets/img/arduino/a04.png" alt="">
+        <li>webEditorがひらく！</li>
+        <img src="../assets/img/arduino/a05.png" alt="">
+        <li>ちょっと戻って<a href="<a href=" #"></a>">GettingStarted</a>を開く</li>
+        <img src="../assets/img/arduino/a06.png" alt="">
+        <li>一番下のArduinoPluginをクリック</li>
+        <img src="../assets/img/arduino/a07.png" alt="">
+        <li>次々進んでdmgファイルをダウンロードする</li>
+        <img src="../assets/img/arduino/a08.png" alt="">
+        <img src="../assets/img/arduino/a09.png" alt="">
+        <li>dmgファイルを展開しinstallerを起動してインストールする</li>
+        <li>これで初期設定終了Editorに戻り開発を始める</li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section>
+      <h3>First Project「Lチカ！」</h3>
+      <p>
+        フィジカルコンピューティングの"Hello, World！"
+        <br>Lチカ（LEDがチカチカ明滅する）をやる
+      </p>
+      <h4>事前準備</h4>
+      <ol>
+        <li>LEDには極性がある⬇︎⬇︎</li>
+        <img src="../assets/img/arduino/led.jpg" alt="">
+        <li>電源を入れていない状態で、<b>アノードを13番ピン・カソードをGND</b>に差し込む</li>
+      </ol>
+
+      <h4>写経</h4>
+      <code>
+        <pre class="prettyprint linenums lang-js">
+void setup() {
+  // デジタルピンの初期化：13番ピンを出力に設定
+  pinMode(13, OUTPUT);
+}
+
+// loop関数はp5jsのdraw関数とおなじ
+void loop() {
+  digitalWrite(13, HIGH);   // LEDをON
+  delay(1000);              // 1秒待つ
+  digitalWrite(13, LOW);    // LEDをOFF
+  delay(1000);              // 1秒待つ
+}
+        </pre>
+      </code>
+      <h4>プログラムをアップロードする</h4>
+      <p>
+        小さいとはいえ，Arduinoはパソコンのようなもの
+        <br>プログラムをアップロードしないと動かない
+      </p>
+      <ol>
+        <li>PCとArduinoをつなぐ</li>
+        <img src="../assets/img/arduino/aa01.png" alt="">
+        <li>Arduinoって書いてあるポートを選択
+          <br>（見えない人はプラグインが上手く入っていない可能性がある）
+        </li>
+        <img src="../assets/img/arduino/aa00.png" alt="">
+        <li>コードのVerify!(検証する)</li>
+        <img src="../assets/img/arduino/aa02.png" alt="">
+        <li>アップロード！</li>
+        <img src="../assets/img/arduino/aa03.png" alt="">
+        <li>上手くいけば，LEDがフラッシュした後，１秒ごとに明滅する</li>
+        <li>Hello, Physical World!</li>
+      </ol>
+      <h4>task</h4>
+      <ul>
+        <li>明滅のタイミングを変えてみる</li>
+        <ul>
+          <li>ex: 3秒間隔の明滅</li>
+          <li>ex: 5秒点灯3秒の消灯</li>
+        </ul>
+        <li>モールス信号で"SOS"送ってみる</li>
+        <ul>
+          <li>Reference↓↓</li>
+          <li><a href="https://gigazine.net/news/20150305-learn-morse-code/">ややこしかったモールス信号を簡単に覚えられる1枚の斬新な図とは</a></li>
+        </ul>
+      </ul>
+    </section>
+  </main>
+
+  <hr>
+  <footer>
+    <h3>XtD Faculty, DoID, KUAD</h3>
+    <ul class="credit">
+      <li><b><a href="http://shira-ko.com/">SHIRAISHI Koichi</a></b> as Lecturer</li>
+      <li><b><a href="http://fushigidesign.com/">AKIYAMA Keita</a></b> as Part time lecturer (XtD Application)</li>
+    </ul>
+    <small>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />This work is licensed under a <a
+        rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+    </small>
+  </footer>
+</body>
+
+</html>
