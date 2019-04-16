@@ -47,3 +47,5 @@ table th, table td{
 .article { background-color: #dddddd }
 
 table ul { text-align: left;}
+
+.done { text-decoration: line-through;}
