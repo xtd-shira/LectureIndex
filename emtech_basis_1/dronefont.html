@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../assets/css/common.css">
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&amp;subset=japanese" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?AtelierSavannaDark"></script>
 
   <title>Development Environment</title>
 </head>
@@ -17,8 +18,19 @@
 
   <main>
     <section>
-      <h3>"W"</h3>
-      <img src="../assets/img/dronefont/w.gif" alt="">
+      <div class="" style="width: 480px">
+        <h3>"W"</h3>
+        <img src="../assets/img/dronefont/w.gif" alt="">
+        <code class="lang-python">
+          <pre class="prettyprint linenums">
+def sequence():
+    send("go 0 0 250 50", 10)
+    send("go 0 -50 -150 50", 5)
+    send("go 0 -50 150 50", 5)
+    send("go 0 -50 -150 50", 5)
+    send("go 0 -50 150 50", 5)</pre>
+        </code>
+      </div>
     </section>
   </main>
   <hr>
