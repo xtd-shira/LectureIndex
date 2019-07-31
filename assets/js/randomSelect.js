@@ -3,10 +3,13 @@ function disp() {
     students = document.getElementById("students"),
     stusList = students.getElementsByTagName('a'),
     i = (getRandomInt(stusList.length));
-  student = (stusList[i].innerText);
-  url = (stusList[i].href);
+  let student = (stusList[i].innerText);
+  let url = (stusList[i].href);
+
+  console.log(i);
+
   if (window.confirm(student + " のページに移動しますか？")) {
-    location.href = url;
+    //location.href = url;
   }
 }
 
