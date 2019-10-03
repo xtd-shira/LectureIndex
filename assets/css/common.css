@@ -16,6 +16,9 @@ p { font-size: 10pt; }
 .first a:link { color: #00aaaa; }
 .first a:visited { color: #336666; }
 
+.second a:link { color: #3ea3f2; }
+.second a:visited { color: #0077ff; }
+
 footer { font-size: 10pt; }
 
 .credit {
