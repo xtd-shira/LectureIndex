@@ -10,7 +10,7 @@
   <title>Input/Output</title>
 </head>
 
-<body>
+<body class="second">
   <header>
     <h1>Arduinoで使うセンサーデバイス</h1>
   </header>
@@ -91,85 +91,7 @@ void loop() {
         <li>色々な種類の<b>アナログセンサー</b>を使って、返ってくる値を確認する</li>
       </ul>
     </section>
-
     <hr>
-
-    <section>
-      <h2>アウトプットデバイス（アクチュエーター）</h2>
-      <p>
-        命令に合わせて何かしらの仕事をし出力する。
-        <br>人間で言ったら、筋肉や声帯など。
-        <br>DCモータは電流から磁場を発生し回転運動に変え、
-        <br>サーボモータは上記と仕事＋信号を受け取りた上で、位置（角度）の制御が可能。
-        <br>ディスプレイは液晶などを使い図形を描ける。
-        <br>スピーカーは音が出て、LEDは光るという仕事をそれぞれ行える。
-      </p>
-      <h3>helloServo</h3>
-      <p>
-        ContinuousRotationServo(連続回転サーボ)を動かしてみる
-      </p>
-
-      <h4>事前準備</h4>
-      <ol>
-        <li><b>電源を入れていない状態で，</b>サーボをArduinoにつなぐ</li>
-        <li>サーボから出てきている線は3本</li>
-        <img src="../assets/img/arduino/s01.jpg" alt="">
-        <li>それぞれ以下のような配置</li>
-        <img src="../assets/img/arduino/s02.jpg" alt="">
-        <li>ジャンパー線を使って，Arduinoと接続する信号はD10</li>
-        <img src="../assets/img/arduino/s03.jpg" alt="">
-      </ol>
-
-      <h4>！写経！</h4>
-      <code>
-        <pre class="prettyprint linenums lang-js">
-//helloServo(continuousRotation)
-
-// ライブラリの読み込み
-#include <Servo.h>
-// サーボオブジェクトを作る
-Servo myservo;
-//中間位置を設定
-const int neutral = 95;
-
-void setup () {
-  myservo.attach(10);  // サーボの信号ピンをD9に
-}
-
-void loop () {
-  // 時計回り高速
-  myservo.write(neutral - 90);
-  delay(2000);
-  // 停止
-  myservo.write(neutral);
-  delay(1000);
-  // 反時計回り高速
-  myservo.write(neutral + 90);
-  delay(2000);
-  // 停止
-  myservo.write(neutral);
-  delay(1000);
-   // 時計回り低速
-  myservo.write(neutral - 10);
-  delay(2000);
-  // 停止
-  myservo.write(neutral);
-  delay(1000);
-  // 反時計回り低速
-  myservo.write(neutral + 10);
-  delay(2000);
-  // 停止
-  myservo.write(neutral);
-  delay(1000);
-}
-        </pre>
-      </code>
-
-      <h4>サーボはどうやって制御されている？</h4>
-      <ul>
-        <li><a href="https://monoist.atmarkit.co.jp/mn/articles/1605/12/news007_2.html">PWM</a>で制御しています</li>
-      </ul>
-    </section>
   </main>
 
   <hr>
