@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../assets/css/common.css">
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&amp;subset=japanese" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=css&skin=desert"></script>
+
+  <title>GSwP5js</title>
+</head>
+
+<body class="second">
+  <header>
+    <h1>P5.jsをはじめよう</h1>
+  </header>
+  <hr>
+
+  <main>
+    <section>
+      <h2>開発環境と実行環境のインターフェイス</h2>
+      <h3>p5.jsとは？</h3>
+      <p>
+        <b><a href="https://p5js.org/">p5.js</a></b>はJavaScriptをベースとした、クリエイティブコーディング指向のフレームワーク
+        <br>jsで書かれているため、webページへの実装が容易に可能
+        <br>実行環境は主にブラウザ上となる
+      </p>
+      <h3>開発環境</h3>
+      <ol>
+        <li><a href="https://editor.p5js.org/">p5.js Web Editor</a>を開く</li>
+        <li>Home/Start/p5.js Web Editorのパスでもおk</li>
+        <li>まずは<b>signUp</b>でアカウント作成</li>
+        <li><b>signIn</b>すればクラウド上にファイル保存可能</li>
+      </ol>
+      <h3>インターフェイス</h3>
+      <p>
+        p5jsウェブエディタはウェブアプリとして作られた統合開発環境（IDE）
+      </p>
+      <img src="../assets/img/p5js/if.png" alt="">
+      <hr>
+
+      <h2>Hello, World!</h2>
+      <ol>
+        <li> 初めてのコーディングとして<a href="https://ja.wikipedia.org/wiki/Hello_world">"Hello, World!"</a>を出力する</li>
+        <ul>
+          <li><b>プログラムの入力は半角英数絶対！</b></li>
+          <li><b>文末にはセミコロン忘れるな！</b></li>
+          <li><b>括弧は開いたら閉じる！</b></li>
+        </ul>
+        <code>
+          <pre class="prettyprint linenums lang-js">
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  text('Hello, World!', 200, 200);
+}
+          </pre>
+        </code>
+        <h3>関数</h3>
+        <p>
+          固有の処理を行って値を返すもの
+          <br>中には実行処理が書かれる
+        </p>
+        <ul>
+          <li>
+            <b>初期化関数（赤）：</b>
+            <br>起動時に一度しか読まれない関数
+          </li>
+          <li>
+            <b>メインループ関数（緑）：</b>
+            <br>実行されたら、停止するまで繰り返される関数
+          </li>
+          <li>
+            <b>組込関数（青）：</b>
+            <br>フレームワークやライブラリに組み込まれ、処理が設定されている関数
+          </li>
+        </ul>
+        <img src="../assets/img/p5js/func.png" alt="">
+        <small>
+          <ul>
+            <li>setupという初期化関数のなかにcreateCanvasという組込関数が入っている</li>
+            <li>drawというメインループ関数のなかに、backgroundと、textという組込関数が入っている</li>
+          </ul>
+        </small>
+        <h3>引数と戻り値</h3>
+        <p>
+          関数の入力と出力
+          <br>どちらもないものもある
+        </p>
+        <ul>
+          <li>関数後ろの()のなかに入れて渡すものが<b>引数</b>
+          <li>その関数で返ってくる値が<b>返り値（戻り値）</b></li>
+        </ul>
+        <img src="../assets/img/p5js/func02.png" alt="">
+        <small>
+        <ul>
+          <li>初期化・メインループ関数は引数をもたない</li>
+          <li>引数で渡せる値の数は、関数の種類よって違う（リファレンスを見るとわかる）</li>
+          <li>組込関数にも引数を持たない関数もある</li>
+        </ul>
+        </small>
+
+        <li class="sage">中心に線を引いてみる</li>
+        <p>テキストの書き出し原点がわかる</p>
+        <code>
+          <pre class="prettyprint linenums lang-js">
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  text('Hello, World!', 200, 200);
+  line(200, 0, 200, 400);
+  line(0, 200, 400, 200);
+}
+          </pre>
+        </code>
+
+        <li class="sage">テキストを中心に移動する</li>
+        <p>まずは目分量でハードコーディング</p>
+        <code>
+          <pre class="prettyprint linenums lang-js">
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  text('Hello, World!', 165, 205);
+  line(200, 0, 200, 400);
+  line(0, 200, 400, 200);
+}
+          </pre>
+        </code>
+
+        <li class="sage">コメントアウトでラインを消す</li>
+        <p>
+          //（スラッシュ二つ）で該当行を読み飛ばすことが可能
+          <br>複数行の場合は/* + */
+        </p>
+        <code>
+          <pre class="prettyprint linenums lang-js">
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  text('Hello, World!', 165, 205);
+  //line(200, 0, 200, 400);
+  //line(0, 200, 400, 200);
+}
+          </pre>
+        </code>
+
+        <li class="sage">キャンバスサイズを変える</li>
+        <p>ハードコーディングのため、テキスト位置がずれる</p>
+        <code>
+          <pre class="prettyprint linenums lang-js">
+function setup() {
+  createCanvas(500, 300);
+}
+
+function draw() {
+  background(220);
+  text('Hello, World!', 165, 205);
+  //line(200, 0, 200, 400);
+  //line(0, 200, 400, 200);
+}
+          </pre>
+        </code>
+
+        <li class="sage">相対的な関係性を見つける</li>
+        <p>
+          相対関係を見つけることで、サイズの変化に対応
+          <br>レスポンシブ
+        </p>
+        <h3>widthとheight</h3>
+        <ul>
+          <li>組込変数</li>
+          <li>createCanvasで設定した値を、戻り値として返す</li>
+          <ol>
+            <li>X方向の幅（width）</li>
+            <li>Y方向の幅(height)</li>
+          </ol>
+        </ul>
+        <code>
+          <pre class="prettyprint linenums lang-js">
+function setup() {
+  createCanvas(500, 300);
+}
+
+function draw() {
+  background(220);
+  text('Hello, World!', width / 2 - 35 , height / 2 + 5);
+  //line(200, 0, 200, 400);
+  //line(0, 200, 400, 200);
+}
+          </pre>
+        </code>
+      </ol>
+    </section>
+    <hr>
+  </main>
+
+  <footer>
+    <h3>XtD Faculty, DoID, KUAD</h3>
+    <ul class="credit">
+      <li><b><a href="http://shira-ko.com/">SHIRAISHI Koichi</a></b> as Lecturer</li>
+      <li><b><a href="#">MATSUMOTO Kaoru</a></b> as Part time lecturer (SwNw Basis)</li>
+    </ul>
+    <small>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />This work is licensed under a <a
+        rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+    </small>
+  </footer>
+</body>
+
+</html>

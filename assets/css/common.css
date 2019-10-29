@@ -56,3 +56,11 @@ table ul { text-align: left;}
 .prettyprint ol.linenums > li {
 	list-style-type: decimal;
 }
+
+ol.how2 li {
+  margin-bottom: 30px;
+}
+
+.sage {
+  margin-top: 50px;
+}
